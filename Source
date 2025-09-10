@@ -1,0 +1,27 @@
+ 
+  // ---------- Source ---------- 
+class Source { 
+ 
+ 
+                                                                                                                                                              717824F341 
+ private int sourceId; 
+ private String name; 
+  private String category; 
+   private double trustScore; 
+name, String category, double trustScore) { 
+   this.sourceId=sourceId; 
+  public Source(int sourceId,string,name,string category,double trustscore); 
+      } 
+  this.name = name; 
+  this.category = category; 
+  public int getSourceId() { return sourceId; } 
+  public String getName() { return name; } 
+ public String getCategory() { return category; } 
+ public double getTrustScore() { return trustScore; } 
+   public void setTrustScore(double trustScore) { this.trustScore = trustScore; } 
+ 
+ @Override 
+ public String toString() { 
+  return "Source: " + name + " (" + category + ") TrustScore=" + trustScore; 
+    } 
+}
