@@ -1,0 +1,25 @@
+// ---------- Subscriber (Base Class) ---------- 
+abstract class Subscriber { 
+  private int id; 
+   private String name; 
+  private String email; 
+    private List<String> preferences; 
+ 
+ 
+                                                                                                                                                              717824F341 
+  private String plan; 
+ public Subscriber(int id, String name, String email, List<String> preferences, String 
+plan) { 
+  this.id = id; 
+ this.name = name; 
+  this.email = email; 
+ this.preferences = preferences; 
+   this.plan = plan; 
+    } 
+  public int getId() { return id; } 
+ public String getName() { return name; } 
+  public String getEmail() { return email; } 
+   public List<String> getPreferences() { return preferences; } 
+  public String getPlan() { return plan; } 
+   public abstract List<Article> buildDigest(List<Article> fetchedArticles); 
+} 
