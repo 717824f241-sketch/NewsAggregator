@@ -1,0 +1,10 @@
+// ---------- NewsService ---------- 
+class NewsService { 
+  private List<Source> sources = new ArrayList<>(); 
+ 
+ 
+                                                                                                                                                              717824F341 
+   private List<Article> articles = new ArrayList<>(); 
+   private List<Subscriber> subscribers = new ArrayList<>(); 
+ public void addSource(Source s) { sources.add(s); } 
+   public void addSubscriber(Subscriber s) { subscribers.add(s); }
