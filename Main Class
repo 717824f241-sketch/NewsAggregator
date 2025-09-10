@@ -1,0 +1,34 @@
+// ---------- Main Class -------- 
+public class main { 
+ 
+    // TODO Auto-generated method stub 
+public static void main(String[] args) { 
+  NewsService service = new NewsService(); 
+ 
+          // Add sources 
+ service.addSource(new Source(1, "TechCrunch", "Tech", 8.5)); 
+    service.addSource(new Source(2, "ESPN", "Sports", 9.0)); 
+ service.addSource(new Source(3, "Wired", "Tech", 8.0)); 
+ service.addSource(new Source(4, "SkySports", "Sports", 7.5)); 
+ 
+          // Add subscribers 
+  service.addSubscriber(new FreeSubscriber(1, "Alice", "alice@mail.com", 
+Arrays.asList("Tech"))); 
+  service.addSubscriber(new PaidSubscriber(2, "Bob", "bob@mail.com", 
+Arrays.asList("Tech", "Sports"))); 
+          // Simulate fetch 
+  service.fetchArticles(); 
+          // Deliver Digests 
+ service.deliverDigests(); 
+          // Trust Report 
+   service.trustReport(); 
+ 
+          // Example filtering 
+   System.out.println("\n--- Filtered by Category 'Tech' ---"); 
+ 
+ 
+                                                                                                                                                              717824F341 
+ for (Article a : service.filter("Tech")) { 
+   System.out.println(a); 
+     } 
+        }
