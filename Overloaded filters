@@ -1,0 +1,47 @@
+  // Overloaded filters 
+ public List<Article> filter(String category) { 
+  List<Article> res = new ArrayList<>(); 
+ for (Article a : articles) { 
+  if (a.getCategory().equalsIgnoreCase(category)) res.add(a); 
+    } 
+  return res; 
+  } 
+    public List<Article> filter(LocalDateTime since) { 
+   List<Article> res = new ArrayList<>(); 
+for (Article a : articles) { 
+    if (a.getPublishTime().isAfter(since)) res.add(a); 
+ 
+ 
+                                                                                                                                                              717824F341 
+          return res; 
+    } 
+  public List<Article> filterByKeyword(String keyword) { 
+ List<Article> res = new ArrayList<>(); 
+  for (Article a : articles) { 
+   if (a.getTitle().toLowerCase().contains(keyword.toLowerCase())) res.add(a); 
+  } 
+ return res; 
+  } 
+  public void deliverDigests() { 
+  for (Subscriber s : subscribers) { 
+  List<Article> digest = s.buildDigest(articles); 
+     System.out.println("\n--- Digest for " + s.getName() + " (" + s.getPlan() + ") ---"); 
+   if (digest.isEmpty()) { 
+               System.out.println("No articles found for preferences."); 
+              } else { 
+                  for (Article a : digest) { 
+                      System.out.println(a); 
+                  } 
+              } 
+          } 
+      } 
+  public void trustReport() { 
+System.out.println("\n--- Source Trust Report ---"); 
+   for (Source s : sources) { 
+  System.out.println(s); 
+    } 
+       } 
+ 
+ 
+                                                                                                                                                              717824F341 
+ }
