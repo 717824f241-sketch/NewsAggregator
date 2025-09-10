@@ -1,0 +1,20 @@
+// ---------- FreeSubscriber ---------- 
+class FreeSubscriber extends Subscriber { 
+   public FreeSubscriber(int id, String name, String email, List<String> preferences) { 
+ super(id, name, email, preferences, "FREE"); 
+  } 
+ @Override 
+  public List<Article> buildDigest(List<Article> fetchedArticles) { 
+          // Free plan: max 3 articles 
+  List<Article> digest = new ArrayList<>(); 
+ for (Article a : fetchedArticles) { 
+    if (getPreferences().contains(a.getCategory())) { 
+ 
+ 
+                                                                                                                                                              717824F341 
+ digest.add(a);  } 
+   if (digest.size() == 3) break; 
+  } 
+ return digest; 
+  } 
+    }
