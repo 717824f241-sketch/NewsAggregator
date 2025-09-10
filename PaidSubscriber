@@ -1,0 +1,18 @@
+// ---------- PaidSubscriber ---------- 
+class PaidSubscriber extends Subscriber { 
+ public PaidSubscriber(int id, String name, String email, List<String> preferences) {  
+super(id, name, email, preferences, "PAID"); 
+    } 
+@Override 
+  public List<Article> buildDdArticles) { 
+          // Paid plan: unlimited but filter by preferenceigest(List<Article> 
+fetche 
+  List<Article> digest = new ArrayList<>(); 
+  for (Article a : fetchedArticles) { 
+ if (getPreferences().contains(a.getCategory())) 
+ digest.add(a); 
+    } 
+     } 
+return digest; 
+    } 
+}
